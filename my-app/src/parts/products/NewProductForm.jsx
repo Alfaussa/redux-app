@@ -1,14 +1,14 @@
 import { useState } from 'react'
-
-
-
+import { nanoid } from '@reduxjs/toolkit'
+import { useDispatch } from 'react-redux' 
+import { productAdded } from './productsSlice'
 
 export const NewProductForm = () => {
 	const [name, setName] = useState('')
 	const [desc, setDesc] = useState('')
 	const [price, setPrice] = useState(0)
 	const [amount, setAmount] = useState(0)
-
+    const dispatch = useDispatch()
 
 
 
@@ -21,6 +21,24 @@ const onPriceChanged = (e) =>
 const onAmountChanged = (e) => 
 	setAmount(e.target.value) 
 
+const onSaveProductClick 
+	= () => {if (name && desc && 
+		price && amount) { 
+		dispatch(
+			productAdded({
+				id: nanoid(),
+				name,
+				desc,
+				price,
+				amount
+			})
+		)
+
+		setName('')
+		setDesc('')
+		setPrice(0)
+		setAmount(0)
+	}} 
 return (
 	<div>
 		<h2>Add a New Product</h2>
@@ -61,7 +79,8 @@ return (
 	/>
 </p>
 </p>
-<button type="button">save</button>
+<button type="button" 
+	onClick={onSaveProductClick}>save</button>
 </form>
 	</div>
 )
