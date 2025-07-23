@@ -1,3 +1,5 @@
+import { ProductsList } from '../parts/products/ProductsList'
+
 function Root() {
 	return (
 		<div id="main">
@@ -8,8 +10,9 @@ function Root() {
 				</nav>
 			</div>
 			<div id="main_page">
-				<h2>This is my first Redux app!</h2>
+				<h2>My Products App</h2>
 				<hr></hr>
+                <ProductsList />
 			</div>
 		</div>
 	)
