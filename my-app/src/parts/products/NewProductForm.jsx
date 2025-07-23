@@ -25,7 +25,44 @@ return (
 	<div>
 		<h2>Add a New Product</h2>
 		<form>
-		</form>
+	<p>
+		<label htmlFor="productName">Name:</label>
+		<input
+			id="productName"
+			name="productName"
+			value={name}
+			onChange={onNameChanged}
+		/>
+	</p>
+    <p>
+	<label htmlFor="productDesc">Description:</label>
+	<textarea
+		id="productDesc"
+		name="productDesc"
+		value={desc}
+		onChange={onDescChanged}
+	/>
+    <p>
+	<label htmlFor="productPrice">Price:</label>
+	<textarea
+		id="productPrice"
+		name="productPrice"
+		value={price}
+		onChange={onPriceChanged}
+	/>
+</p>
+<p>
+	<label htmlFor="productAmount">Amount:</label>
+	<textarea
+		id="productAmount"
+		name="productAmount"
+		value={amount}
+		onChange={onAmountChanged}
+	/>
+</p>
+</p>
+<button type="button">save</button>
+</form>
 	</div>
 )
 }

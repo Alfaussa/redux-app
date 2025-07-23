@@ -1,5 +1,5 @@
 import { ProductsList } from '../parts/products/ProductsList'
-
+import { NewProductForm } from '../parts/products/NewProductForm'
 function Root() {
 	return (
 		<div id="main">
@@ -12,6 +12,7 @@ function Root() {
 			<div id="main_page">
 				<h2>My Products App</h2>
 				<hr></hr>
+                <NewProductForm />
                 <ProductsList />
 			</div>
 		</div>
