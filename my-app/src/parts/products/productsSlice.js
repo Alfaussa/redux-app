@@ -20,7 +20,11 @@ const initialState = [
 const productsSlice = createSlice({
 	name: 'products',
 	initialState,
-	reducers: {}
+	reducers: {productAdded(state, 
+			action) { 
+			state.push(action.payload)
+		},}
 })
-
+export const { productAdded 
+	} = productsSlice.actions
 export default productsSlice.reducer
