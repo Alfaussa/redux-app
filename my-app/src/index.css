@@ -55,3 +55,8 @@ form {
 form p {
 	margin: 5px;
 }
+
+.products-list {
+	display: flex;
+	flex-direction: column;
+}

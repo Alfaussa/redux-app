@@ -1,5 +1,6 @@
-import { ProductsList } from '../parts/products/ProductsList'
-import { NewProductForm } from '../parts/products/NewProductForm'
+import { Outlet } from "react-router-dom"
+
+
 function Root() {
 	return (
 		<div id="main">
@@ -9,11 +10,10 @@ function Root() {
 					<a>Sellers</a>
 				</nav>
 			</div>
-			<div id="main_page">
+			<div id="main-page">
 				<h2>My Products App</h2>
 				<hr></hr>
-                <NewProductForm />
-                <ProductsList />
+                <Outlet/>
 			</div>
 		</div>
 	)
