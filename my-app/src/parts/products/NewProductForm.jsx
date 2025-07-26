@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { nanoid } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux' 
 import { productAdded } from './productsSlice'
 
@@ -24,15 +23,8 @@ const onAmountChanged = (e) =>
 const onSaveProductClick 
 	= () => {if (name && desc && 
 		price && amount) { 
-		dispatch(
-			productAdded({
-				id: nanoid(),
-				name,
-				desc,
-				price,
-				amount
-			})
-		)
+		dispatch(productAdded(name, 
+	desc, price, amount)) 
 
 		setName('')
 		setDesc('')
