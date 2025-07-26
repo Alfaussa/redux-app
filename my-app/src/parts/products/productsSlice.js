@@ -27,7 +27,7 @@ const productsSlice = createSlice({
 		state.push(action.payload)
 	},
 	prepare(name, desc, 
-		price, amount) { 
+		price, amount, sellerId) { 
 		return {
 			payload: {
 				id: nanoid(),
@@ -35,6 +35,7 @@ const productsSlice = createSlice({
 				desc,
 				price,
 				amount,
+                seller: sellerId,
 			},
 		}
 	},

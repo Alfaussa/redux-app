@@ -7,8 +7,9 @@ export const NewProductForm = () => {
 	const [desc, setDesc] = useState('')
 	const [price, setPrice] = useState(0)
 	const [amount, setAmount] = useState(0)
+	const [sellerId, setSellerId] = useState('')
     const dispatch = useDispatch()
-
+const sellers = useSelector((state) => state.sellers)
 
 
     const onNameChanged = (e) => 
@@ -19,12 +20,14 @@ const onPriceChanged = (e) =>
 	setPrice(e.target.value) 
 const onAmountChanged = (e) => 
 	setAmount(e.target.value) 
+const onSellerChanged = (e) => 
+	setSellerId(e.target.value)
 
 const onSaveProductClick 
 	= () => {if (name && desc && 
-		price && amount) { 
+		price && amount && sellerId) { 
 		dispatch(productAdded(name, 
-	desc, price, amount)) 
+	desc, price, amount, sellerId)) 
 
 		setName('')
 		setDesc('')
