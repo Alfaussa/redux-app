@@ -72,7 +72,8 @@ return (
 		value={desc}
 		onChange={onDescChanged}
 	/>
-    <p>
+    </p>
+	<p>
 	<label htmlFor="productPrice">Price:</label>
 	<textarea
 		id="productPrice"
@@ -90,7 +91,7 @@ return (
 		onChange={onAmountChanged}
 	/>
 </p>
-</p>
+
 <button type="button" 
 	onClick={onSaveProductClick}>save</button>
 </form>
