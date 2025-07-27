@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux' 
 import { productAdded } from './productsSlice'
+import { useSelector } from 'react-redux'
 
 export const NewProductForm = () => {
 	const [name, setName] = useState('')
@@ -34,6 +35,14 @@ const onSaveProductClick
 		setPrice(0)
 		setAmount(0)
 	}} 
+
+const sellersList = sellers.map((seller) => ( 
+	<option key={seller.id} value={seller.id}>
+		{seller.name}
+	</option>
+))
+
+
 return (
 	<div>
 		<h2>Add a New Product</h2>
@@ -47,6 +56,14 @@ return (
 			onChange={onNameChanged}
 		/>
 	</p>
+	<p>
+	<label htmlFor="prodSeller">Seller:</label>
+	<select id="prodSeller" value={sellerId} 
+		onChange={onSellerChanged}> 
+		<option value=""></option>
+		{sellersList}
+	</select>
+</p>
     <p>
 	<label htmlFor="productDesc">Description:</label>
 	<textarea
