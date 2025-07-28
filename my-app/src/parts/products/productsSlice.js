@@ -50,10 +50,17 @@ const productsSlice = createSlice({
 		desiredProduct.amount = amount
 	
                 }
-        }
-    }
-})
-export const { productAdded, productUpdated
+        },
+        reactionClicked(state, action) {
+            const { productId, reaction } = action.payload
+            const currentProduct = state.find(product => product.id === productId) 
+            if (currentProduct) {
+	currentProduct.reactions[reaction]++
+}
+
+    },
+}})
+export const { productAdded, productUpdated, reactionClicked
 	} = productsSlice.actions
 
 export default productsSlice.reducer
