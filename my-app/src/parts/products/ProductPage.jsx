@@ -22,6 +22,7 @@ export const ProductPage = () => {
 		<p>Description: {product.desc}</p>
 		<p>Price: {product.price}</p>
 		<p>Amount:{product.amount}</p>
+        <UserReactions product={product} />
         <Link to={`/editProduct/${product.id}`} className="link-btn">
 	edit
 </Link>

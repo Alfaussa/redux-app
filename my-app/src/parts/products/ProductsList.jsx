@@ -10,6 +10,7 @@ export const ProductsList = () => {
 		<h3>{product.name}</h3>
 		<SellerOfProd sellerId={product.seller} />
 		<p>{product.desc.substring(0, 100)}</p>
+		<UserReactions product={product} />
 		<Link to={`/products/${product.id}`} className="link-btn">
 			view
 		</Link>
