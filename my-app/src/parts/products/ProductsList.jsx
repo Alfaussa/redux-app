@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import { NewProductForm } from './NewProductForm'
 import { Link } from 'react-router-dom'
 import { SellerOfProd } from './SellerOfProd'
-
+import { UserReactions } from './UserReactions'
 export const ProductsList = () => {
 	const products = useSelector((state) => state.products)
     const dispProducts = products.map((product) => (

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { Link } from 'react-router-dom'
 import { SellerOfProd } from "./SellerOfProd"
+import { UserReactions } from "./UserReactions"
 export const ProductPage = () => {
 	let params = useParams()
 	const { productId } = params
